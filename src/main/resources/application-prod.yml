@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Kucni Budzet
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQLHOST}:${MYSQLPORT}/${MYSQLDATABASE}?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: ${MYSQLUSER}
+    password: ${MYSQLPASSWORD}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    
+    database-platform: org.hibernate.dialect.MySQLDialect
+    
+    properties:
+      connection:
+        CharSet: utf8
+        characterEncoding: utf8
+      hibernate:
+        connection:
+          useUnicode: true
+          
+hibernate:
+  dialect: org.hibernate.dialect.MySQL8Dialect
+
+
