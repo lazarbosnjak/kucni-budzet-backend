@@ -1,5 +1,7 @@
 package lazarbosnjak.kucniBuzdet.model;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -10,7 +12,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lazarbosnjak.kucniBuzdet.enumeration.KorisnickaUloga;
+import lombok.Data;
 
+@Data
 @Entity
 public class Korisnik {
 	
@@ -18,20 +22,23 @@ public class Korisnik {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
 	
-	@Column(unique = true, nullable = false)
+//	@Column(nullable = false)
 	private String ime;
 	
-	@Column(unique = true, nullable = false)
+//	@Column(nullable = false)
 	private String prezime;
 	
-	@Column(unique = true, nullable = false)
-	private String eMail;
+//	@Column(unique = true, nullable = false)
+	private String email;
 	
-	@Column(nullable = false)
+//	@Column(nullable = false)
 	private String lozinka;
 	
 	@Enumerated(EnumType.STRING)
-	private KorisnickaUloga uloga;
+	private Set<KorisnickaUloga> uloge = new HashSet<KorisnickaUloga>();
 	
+	public void setUloga(KorisnickaUloga uloga) {
+		this.uloge.add(uloga);
+	}
 
 }
