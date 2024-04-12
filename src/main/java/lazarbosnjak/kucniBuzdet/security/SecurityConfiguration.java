@@ -35,7 +35,6 @@ public class SecurityConfiguration {
 	@Autowired
 	private JwtAuthFilter jwtAuthFilter;
 	
-// =====================================================
 	@Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsServiceImpl();
@@ -43,7 +42,9 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf(AbstractHttpConfigurer::disable)
+        return http
+        		.cors((cors) -> cors.configurationSource(corsConfigurationSource()))
+        		.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> 
 					request
 						.requestMatchers("/api/v1/**").permitAll()
@@ -52,7 +53,8 @@ public class SecurityConfiguration {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class).build();
-
+        
+        
     }
 
     @Bean
@@ -73,21 +75,20 @@ public class SecurityConfiguration {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
-// =====================================================
 	
-//	@Bean
-//	public CorsConfigurationSource corsConfigurationSource() {
-//		CorsConfiguration configuration = new CorsConfiguration();
-//		configuration.setAllowedOrigins(Arrays.asList("*"));
-//		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTINOS", "PUT", "DELETE"));
-//		configuration.setAllowedHeaders(Arrays.asList("*"));
-//		configuration.setAllowCredentials(true);
-//		configuration.setMaxAge(Long.valueOf(3600));
-//		configuration.setExposedHeaders(Arrays.asList("Total-Pages"));
-//		
-//		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//		source.registerCorsConfiguration("/**", configuration);
-//		return source;
-//	}
+	@Bean
+	public CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration configuration = new CorsConfiguration();
+		configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTINOS", "PUT", "DELETE"));
+		configuration.setAllowedHeaders(Arrays.asList("*"));
+		configuration.setAllowCredentials(true);
+		configuration.setMaxAge(Long.valueOf(3600));
+		configuration.setExposedHeaders(Arrays.asList("Total-Pages"));
+		
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**", configuration);
+		return source;
+	}
 	
 }

@@ -1,6 +1,7 @@
 package lazarbosnjak.kucniBuzdet.controller;
 
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -38,8 +39,13 @@ public class KorisnikController {
 	@PostMapping(value = "/register")
 	public ResponseEntity<?> register(@RequestBody @Validated KorisnikRegistracijaDTO dto) {
 		
+		if (!dto.getPassword().equals(dto.getPonovljeniPassword())) return ResponseEntity.badRequest().build();
+		
 		Korisnik korisnk = new Korisnik();
 		String encodedPassword = passwordEncoder.encode(dto.getPassword());
+		
+		korisnk.setIme(dto.getIme());
+		korisnk.setPrezime(dto.getPrezime());
 		korisnk.setEmail(dto.getEmail());
 		korisnk.setLozinka(encodedPassword);
 		korisnk.setUloga(KorisnickaUloga.KORISNIK);
@@ -47,7 +53,7 @@ public class KorisnikController {
 		return ResponseEntity.accepted().build();
 	}
 	
-	@PostMapping("/auth")
+	@PostMapping(value = "/auth", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> authenticateUser(@RequestBody AuthKorisnikDTO dto) {
 		 Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getPassword()));
 		 if (authentication.isAuthenticated()) {

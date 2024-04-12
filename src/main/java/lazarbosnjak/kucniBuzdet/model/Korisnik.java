@@ -35,10 +35,6 @@ public class Korisnik {
 	private String lozinka;
 	
 	@Enumerated(EnumType.STRING)
-	private Set<KorisnickaUloga> uloge = new HashSet<KorisnickaUloga>();
-	
-	public void setUloga(KorisnickaUloga uloga) {
-		this.uloge.add(uloga);
-	}
+	private KorisnickaUloga uloga;
 
 }

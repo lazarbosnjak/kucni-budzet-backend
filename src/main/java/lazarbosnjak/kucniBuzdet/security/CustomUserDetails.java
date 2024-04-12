@@ -21,11 +21,8 @@ public class CustomUserDetails extends Korisnik implements UserDetails {
         this.username = korisnik.getEmail();
         this.password = korisnik.getLozinka();
         List<GrantedAuthority> auths = new ArrayList<>();
-
-        for(KorisnickaUloga uloga : korisnik.getUloge()){
-
-            auths.add(new SimpleGrantedAuthority(uloga.toString()));
-        }
+        auths.add(new SimpleGrantedAuthority(korisnik.getUloga().toString()));
+        
         this.grantedAuthorities = auths;
     }
 
