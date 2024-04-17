@@ -11,6 +11,6 @@ import lazarbosnjak.kucniBudzet.model.Korisnik;
 @Repository
 public interface KorisnikRepository extends JpaRepository<Korisnik, UUID>{
 
-	Optional<Korisnik> findFirstByEmail(String eMail);
+	Optional<Korisnik> findFirstByEmail(String email);
 	
 }

@@ -68,20 +68,4 @@ public class KorisnikController {
 		 }
 	}
 	
-	@GetMapping(value = "/test")
-	public ResponseEntity<String> testiranje(Authentication auth) {
-		
-		try {
-			System.out.println();
-			System.out.println(userDetailsService.loadUserByUsername(auth.getName()));
-			System.out.println();
-			return ResponseEntity.ok("1");
-		} catch (Exception e) {
-			throw new UsernameNotFoundException("ee er");
-		}
-		
-		
-		
-		
-	}
 }
