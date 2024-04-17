@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.enumeration;
+package lazarbosnjak.kucniBudzet.enumeration;
 
 public enum KorisnickaUloga {
 	ADMIN,

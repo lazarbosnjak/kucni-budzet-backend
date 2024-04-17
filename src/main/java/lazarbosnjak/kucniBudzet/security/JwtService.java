@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.security;
+package lazarbosnjak.kucniBudzet.security;
 
 import java.security.Key;
 import java.util.Date;

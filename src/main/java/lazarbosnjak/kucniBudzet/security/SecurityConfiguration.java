@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.security;
+package lazarbosnjak.kucniBudzet.security;
 
 import java.util.Arrays;
 
@@ -25,7 +25,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import lazarbosnjak.kucniBuzdet.service.impl.UserDetailsServiceImpl;
+import lazarbosnjak.kucniBudzet.service.impl.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity

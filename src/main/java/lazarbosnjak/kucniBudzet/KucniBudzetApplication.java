@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet;
+package lazarbosnjak.kucniBudzet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.repo;
+package lazarbosnjak.kucniBudzet.repo;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import lazarbosnjak.kucniBuzdet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.model.Korisnik;
 
 @Repository
 public interface KorisnikRepository extends JpaRepository<Korisnik, UUID>{

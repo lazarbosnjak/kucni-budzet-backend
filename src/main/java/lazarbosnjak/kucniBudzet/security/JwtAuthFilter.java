@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.security;
+package lazarbosnjak.kucniBudzet.security;
 
 import java.io.IOException;
 

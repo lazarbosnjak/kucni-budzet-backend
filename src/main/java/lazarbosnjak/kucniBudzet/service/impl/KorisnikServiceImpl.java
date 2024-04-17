@@ -1,13 +1,13 @@
-package lazarbosnjak.kucniBuzdet.service.impl;
+package lazarbosnjak.kucniBudzet.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lazarbosnjak.kucniBuzdet.model.Korisnik;
-import lazarbosnjak.kucniBuzdet.repo.KorisnikRepository;
-import lazarbosnjak.kucniBuzdet.service.KorisnikService;
+import lazarbosnjak.kucniBudzet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.repo.KorisnikRepository;
+import lazarbosnjak.kucniBudzet.service.KorisnikService;
 
 @Service
 public class KorisnikServiceImpl implements KorisnikService{

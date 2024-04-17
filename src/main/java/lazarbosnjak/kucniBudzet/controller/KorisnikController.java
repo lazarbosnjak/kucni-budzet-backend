@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.controller;
+package lazarbosnjak.kucniBudzet.controller;
 
 
 import org.springframework.http.MediaType;
@@ -6,23 +6,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lazarbosnjak.kucniBuzdet.enumeration.KorisnickaUloga;
-import lazarbosnjak.kucniBuzdet.model.Korisnik;
-import lazarbosnjak.kucniBuzdet.model.dto.AuthKorisnikDTO;
-import lazarbosnjak.kucniBuzdet.model.dto.KorisnikDTO;
-import lazarbosnjak.kucniBuzdet.model.dto.KorisnikRegistracijaDTO;
-import lazarbosnjak.kucniBuzdet.security.JwtService;
-import lazarbosnjak.kucniBuzdet.service.KorisnikService;
+import lazarbosnjak.kucniBudzet.enumeration.KorisnickaUloga;
+import lazarbosnjak.kucniBudzet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.model.dto.AuthKorisnikDTO;
+import lazarbosnjak.kucniBudzet.model.dto.KorisnikDTO;
+import lazarbosnjak.kucniBudzet.model.dto.KorisnikRegistracijaDTO;
+import lazarbosnjak.kucniBudzet.security.JwtService;
+import lazarbosnjak.kucniBudzet.service.KorisnikService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -36,7 +39,7 @@ public class KorisnikController {
 	private final PasswordEncoder passwordEncoder;
 	private final JwtService jwtService;
 	
-	@PostMapping(value = "/register")
+	@PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> register(@RequestBody @Validated KorisnikRegistracijaDTO dto) {
 		
 		if (!dto.getPassword().equals(dto.getPonovljeniPassword())) return ResponseEntity.badRequest().build();
@@ -63,5 +66,22 @@ public class KorisnikController {
 		 } else {
 			 throw new UsernameNotFoundException("invalid user request..!!");
 		 }
+	}
+	
+	@GetMapping(value = "/test")
+	public ResponseEntity<String> testiranje(Authentication auth) {
+		
+		try {
+			System.out.println();
+			System.out.println(userDetailsService.loadUserByUsername(auth.getName()));
+			System.out.println();
+			return ResponseEntity.ok("1");
+		} catch (Exception e) {
+			throw new UsernameNotFoundException("ee er");
+		}
+		
+		
+		
+		
 	}
 }

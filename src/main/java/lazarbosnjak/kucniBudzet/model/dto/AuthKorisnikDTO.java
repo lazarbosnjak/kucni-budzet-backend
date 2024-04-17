@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.model.dto;
+package lazarbosnjak.kucniBudzet.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

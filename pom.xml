@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lazarbosnjak</groupId>
-	<artifactId>kucniBuzdet</artifactId>
+	<artifactId>kucni-budzet</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Kucni Budzet</name>
 	<description>Kucni Budzet</description>
@@ -94,6 +94,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>kucni-budzet</finalName>
 	</build>
 
 </project>

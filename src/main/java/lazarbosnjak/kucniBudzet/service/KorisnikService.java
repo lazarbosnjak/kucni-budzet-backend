@@ -1,8 +1,8 @@
-package lazarbosnjak.kucniBuzdet.service;
+package lazarbosnjak.kucniBudzet.service;
 
 import java.util.Optional;
 
-import lazarbosnjak.kucniBuzdet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.model.Korisnik;
 
 public interface KorisnikService {
 

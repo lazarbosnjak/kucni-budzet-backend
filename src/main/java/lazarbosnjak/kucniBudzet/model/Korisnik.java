@@ -1,7 +1,5 @@
-package lazarbosnjak.kucniBuzdet.model;
+package lazarbosnjak.kucniBudzet.model;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -11,7 +9,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lazarbosnjak.kucniBuzdet.enumeration.KorisnickaUloga;
+import lazarbosnjak.kucniBudzet.enumeration.KorisnickaUloga;
 import lombok.Data;
 
 @Data

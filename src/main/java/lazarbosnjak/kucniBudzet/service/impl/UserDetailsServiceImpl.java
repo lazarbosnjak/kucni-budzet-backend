@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.service.impl;
+package lazarbosnjak.kucniBudzet.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +13,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import lazarbosnjak.kucniBuzdet.enumeration.KorisnickaUloga;
-import lazarbosnjak.kucniBuzdet.model.Korisnik;
-import lazarbosnjak.kucniBuzdet.security.CustomUserDetails;
-import lazarbosnjak.kucniBuzdet.service.KorisnikService;
+import lazarbosnjak.kucniBudzet.enumeration.KorisnickaUloga;
+import lazarbosnjak.kucniBudzet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.security.CustomUserDetails;
+import lazarbosnjak.kucniBudzet.service.KorisnikService;
 
 @Service
 @Primary

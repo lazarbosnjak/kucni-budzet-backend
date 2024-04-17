@@ -1,4 +1,4 @@
-package lazarbosnjak.kucniBuzdet.security;
+package lazarbosnjak.kucniBudzet.security;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,8 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import lazarbosnjak.kucniBuzdet.enumeration.KorisnickaUloga;
-import lazarbosnjak.kucniBuzdet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.enumeration.KorisnickaUloga;
+import lazarbosnjak.kucniBudzet.model.Korisnik;
 
 public class CustomUserDetails extends Korisnik implements UserDetails {
 	

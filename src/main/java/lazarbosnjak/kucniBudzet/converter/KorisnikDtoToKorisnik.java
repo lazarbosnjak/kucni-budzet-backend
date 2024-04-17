@@ -1,11 +1,11 @@
-package lazarbosnjak.kucniBuzdet.converter;
+package lazarbosnjak.kucniBudzet.converter;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import lazarbosnjak.kucniBuzdet.model.Korisnik;
-import lazarbosnjak.kucniBuzdet.model.dto.KorisnikDTO;
-import lazarbosnjak.kucniBuzdet.service.KorisnikService;
+import lazarbosnjak.kucniBudzet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.model.dto.KorisnikDTO;
+import lazarbosnjak.kucniBudzet.service.KorisnikService;
 import lombok.RequiredArgsConstructor;
 
 @Component
