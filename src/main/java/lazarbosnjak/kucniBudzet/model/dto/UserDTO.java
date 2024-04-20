@@ -1,5 +1,5 @@
 package lazarbosnjak.kucniBudzet.model.dto;
 
-public class KorisnikDTO {
+public class UserDTO {
 
 }

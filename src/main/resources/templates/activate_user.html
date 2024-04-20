@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Activation</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .message {
+            line-height: 1.5;
+        }
+        .activation-link {
+            display: block;
+            margin-top: 20px;
+        }
+        .activation-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            font-size: small;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Aktivacija naloga</h1>
+    <p class="message">
+		Poštovani,<br>
+		Uspešno ste se registrovali! Kao poslednji korak potrebno je da aktivirate Vaš nalog. <br>
+    	Klikom na dugme ispod bićete preusmereni na stranicu aktivacije naloga.<br> 
+    	Nakon uspešne aktivacije, nastavite na stranicu za prijavu i uživajte u korišćenju naše aplikacije!<br><br>
+    </p>
+    <div class="activation-link">
+        <a th:href="${confirmationUrl}" target="_blank">Aktiviraj nalog</a>
+    </div><br>
+    <hr size="1" color="#d3d3d3">
+    <p class="footer">Odgovori na ovu e-mail adresu neće biti pregledani.<br>Ukoliko imate pitanja i želite da nam se obratite, pošaljite mejl na <u>support@kb.pisns.biz</u></p>
+</div>
+</body>
+</html>

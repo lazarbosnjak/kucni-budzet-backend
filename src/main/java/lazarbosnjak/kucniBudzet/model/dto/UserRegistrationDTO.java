@@ -8,15 +8,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class KorisnikRegistracijaDTO {
+public class UserRegistrationDTO {
 
 	@NotBlank
 	@NotEmpty
-	private String ime;
-	
-	@NotBlank
-	@NotEmpty
-	private String prezime;
+	private String fullName;
 	
 	@NotBlank
 	@NotEmpty
@@ -29,6 +25,6 @@ public class KorisnikRegistracijaDTO {
 	
 	@NotBlank
 	@NotEmpty
-	private String ponovljeniPassword;
+	private String repeatedPassword;
 	
 }

@@ -19,6 +19,7 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtService {
 
+	// ADD YOUR SECRET TO application-dev FILE
 	@Value("${jwt.secret}")
     public String secret;
 

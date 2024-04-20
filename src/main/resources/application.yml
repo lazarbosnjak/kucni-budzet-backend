@@ -2,13 +2,13 @@ spring:
   profiles:
     include: dev
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/kucni_budzet?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/KB?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: ${MYSQL_USER:root}
     password: ${MYSQL_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -23,3 +23,6 @@ spring:
 logging:
   level:
     web: DEBUG
+    
+frontend:
+  url: http://62.169.17.131:3000

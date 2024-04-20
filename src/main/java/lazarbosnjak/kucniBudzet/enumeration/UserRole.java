@@ -1,6 +1,6 @@
 package lazarbosnjak.kucniBudzet.enumeration;
 
-public enum KorisnickaUloga {
+public enum UserRole {
 	ADMIN,
-	KORISNIK;
+	USER;
 }

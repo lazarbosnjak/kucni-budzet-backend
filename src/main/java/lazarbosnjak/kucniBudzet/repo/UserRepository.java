@@ -6,11 +6,11 @@ import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import lazarbosnjak.kucniBudzet.model.Korisnik;
+import lazarbosnjak.kucniBudzet.model.User;
 
 @Repository
-public interface KorisnikRepository extends JpaRepository<Korisnik, UUID>{
+public interface UserRepository extends JpaRepository<User, UUID>{
 
-	Optional<Korisnik> findFirstByEmail(String email);
+	Optional<User> findFirstByEmail(String email);
 	
 }

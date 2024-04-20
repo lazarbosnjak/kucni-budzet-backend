@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class AuthKorisnikDTO {
+public class AuthUserDTO {
 
 	@NotBlank
 	private String email;
